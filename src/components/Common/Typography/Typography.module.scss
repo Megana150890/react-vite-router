@@ -1,0 +1,62 @@
+@use '@styles/variables' as *;
+
+.container {
+	margin: 0;
+	padding: 0;
+}
+
+.typography {
+	font-family: $fontFamily;
+	line-height: 1.2;
+	font-size: $fontSizeMain;
+	font-weight: 400;
+	color: #374146;
+}
+
+.title {
+	font-size: $fontSizeTitle;
+}
+
+.text {
+	font-size: $fontSizeMain;
+}
+
+.caption {
+	font-size: 0.8rem;
+	font-weight: $fontWeightMedium;
+}
+
+.label {
+	font-size: 0.8rem;
+	font-weight: $fontWeightBold;
+	text-transform: uppercase;
+}
+
+.normal {
+	font-size: 1rem;
+	font-weight: $fontWeightRegular;
+}
+
+h1.title {
+	font-size: 3rem;
+}
+
+h2.title {
+	font-size: 2.5rem;
+}
+
+h3.title {
+	font-size: 2rem;
+}
+
+h4.title {
+	font-size: 1.5rem;
+}
+
+h5.title {
+	font-size: 1.25rem;
+}
+
+h6.title {
+	font-size: 1rem;
+}
