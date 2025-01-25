@@ -1,31 +1,28 @@
-import React, { InputHTMLAttributes, FunctionComponent } from "react";
-import clsx from "clsx";
-import styles from "./Field.module.css"; 
+import clsx from 'clsx';
+import { InputHTMLAttributes, ReactNode } from 'react';
+import styles from './Field.module.scss';
 
 export type FieldProps = {
-  label?: string; 
-  error?: string; 
-  className?: string; 
-  inputClassName?: string; 
+	className?: string;
+	label?: string;
+	error?: string;
+	children?: ReactNode;
 } & InputHTMLAttributes<HTMLInputElement>;
 
-export const Field: FunctionComponent<FieldProps> = ({
-  label,
-  error,
-  className,
-  inputClassName,
-  ...props
-}) => {
-  return (
-    <div className={clsx(styles.container, className)}>
-      <label className={styles.label}>{label}</label>
-      <input
-        className={clsx(styles.input, error && styles.errorInput, inputClassName)}
-        {...props}
-      />
-      {error && <span className={styles.errorMessage}>{error}</span>}
-    </div>
-  );
-};
+export function Field({
+	className,
+	label,
+	error,
+	children,
+	...props
+}: FieldProps) {
+	return (
+		<label className={clsx(styles.container, className)}>
+			{label && <span className={styles.label}>{label}</span>}
+			{children}
+			{error && <span className={styles.errorMessage}>{error}</span>}
+		</label>
+	);
+}
 
 export default Field;
