@@ -25,4 +25,3 @@ export function Field({
 	);
 }
 
-export default Field;

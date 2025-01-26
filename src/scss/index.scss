@@ -1,6 +1,24 @@
 @use './_variables' as *;
 
-:root {
+// :root {
+// 	font-family: $fontFamily;
+// 	line-height: 1.5;
+// 	font-weight: 400;
+
+// 	color: $fontColor;
+// 	background-color: $backgroundColor;
+// }
+
+body,
+#root {
+	padding: 0;
+	margin: 0;
+	place-items: stretch;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	min-width: 320px;
+	min-height: 100vh;
 	font-family: $fontFamily;
 	line-height: 1.5;
 	font-weight: 400;
