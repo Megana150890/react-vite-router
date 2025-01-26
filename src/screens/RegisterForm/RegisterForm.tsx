@@ -29,6 +29,6 @@ export function RegisterForm({ className, formSettings }: RegisterFormProps) {
 		<Field>
 			<InputPassword placeholder="Repeat password" />
 		</Field>
-		<Button type="submit" name="signup">Sign Up</Button>
+		<Button type="submit" variant='primary' name="signup">Sign Up</Button>
 	</Form>;
 }

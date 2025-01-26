@@ -1,0 +1,41 @@
+@use '@styles/variables' as *;
+
+.primary {
+	color: white;
+	background-color: #ea5a0a;
+}
+
+.outline {
+	color: #374146;
+	background-color: transparent;
+}
+
+.secondary {
+	color: #374146;
+	background-color: #6c757d;
+}
+
+.link {
+	display: inline;
+	background-color: transparent;
+	color: #374146;
+	border: none;
+	text-decoration: underline;
+	text-transform: initial;
+	cursor: pointer;
+}
+
+button {
+	border-radius: 8px;
+	border: 1px solid transparent;
+	padding: 0.6em 1.2em;
+	font-size: 1em;
+	font-weight: 500;
+	font-family: inherit;
+	background-color: transparent;
+	cursor: pointer;
+	transition: border-color 0.25s;
+}
+button:hover {
+	border-color: #646cff;
+}

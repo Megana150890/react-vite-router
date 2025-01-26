@@ -17,11 +17,11 @@ export function LoginForm({ className, formSettings }: LoginFormProps) {
 	return <Form {...formSettings} method="post" className={clsx(styles.container, className)}>
 		<Title>Sign In</Title>
 		<Field>
-			<InputEmail name="email" />
+			<InputEmail name="email" placeholder="email@example.com" />
 		</Field>
 		<Field>
 			<InputPassword name="password" placeholder="Password" />
 		</Field>
-		<Button type="submit" name="signin">Sign In</Button>
+		<Button type="submit" variant='primary' name="signin">Sign In</Button>
 	</Form>;
 }

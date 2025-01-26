@@ -11,7 +11,7 @@ import clsx from "clsx";
  export function Section ({className, children}: SectionProps) {
     return (
 <section className={clsx(styles.section, className)}>
-    {children}
+<div className={styles.container}>{children}</div>
 </section>
     )
  }

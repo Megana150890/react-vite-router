@@ -2,7 +2,7 @@ import { ActionTag, ButtonType, ButtonVariant } from './types';
 import { ReactNode } from 'react';
 import { Anchor } from '../Anchor/Anchor';
 import clsx from 'clsx';
-import styles from './Action.module.scss';
+import styles from './Action.module.scss'
 
 export type ButtonProps = {
 	type?: ButtonType | keyof typeof ButtonType;
@@ -15,34 +15,97 @@ export type ButtonProps = {
 	Tag?: ActionTag;
 	children?: ReactNode;
 };
+// const withAction = ({
+// 	type = 'button',
+// 	variant = 'primary',
+// 	Tag = 'button',
+// 	...defaults
+// }: ButtonProps) => {
+// 	return function Action(props: ButtonProps) {
+// 		const { className, children, disabled, href, ...rest } = {
+// 			...defaults,
+// 			...props,
+// 		};
+// 		const TagElement = Tag === 'a' ? Anchor : Tag;
+// 		return (
+// 			<TagElement
+// 				{...rest}
+// 				type={Tag === 'button' ? type : undefined}
+// 				href={Tag === 'a' ? href : undefined}
+// 				disabled={disabled}
+// 				className={clsx(styles.button, styles[variant], className, {
+// 					[styles.disabled]: disabled,
+// 				  })}
+// 			>
+// 				{children}
+// 			</TagElement>
+// 		);
+// 	};
+// };
+
+// const withAction = ({
+// 	type = 'button',
+// 	variant = 'primary',
+// 	Tag = 'button',
+// 	...defaults
+//   }: ButtonProps) => {
+// 	return function Action(props: ButtonProps) {
+// 	  const { className, children, disabled, href, variant, ...rest } = {
+// 		...defaults,
+// 		...props,
+// 	  };
+	  
+// 	  const TagElement = Tag === 'a' ? Anchor : Tag;
+	  
+// 	  return (
+// 		<TagElement
+// 		  {...rest}
+// 		  type={Tag === 'button' ? type : undefined}
+// 		  href={Tag === 'a' ? href : undefined}
+// 		  disabled={disabled}
+// 		  className={clsx(styles.button, styles[variant], className, {
+// 			[styles.disabled]: disabled,
+// 		  })}
+// 		>
+// 		  {children}
+// 		</TagElement>
+// 	  );
+// 	};
+//   };
+
 const withAction = ({
 	type = 'button',
 	variant = 'primary',
 	Tag = 'button',
 	...defaults
-}: ButtonProps) => {
+  }: ButtonProps) => {
 	return function Action(props: ButtonProps) {
-		const { className, children, disabled, href, ...rest } = {
-			...defaults,
-			...props,
-		};
-		const TagElement = Tag === 'a' ? Anchor : Tag;
-		return (
-			<TagElement
-				{...rest}
-				type={Tag === 'button' ? type : undefined}
-				href={Tag === 'a' ? href : undefined}
-				disabled={disabled}
-				className={clsx(styles.button, styles[variant], className, {
-					[styles.disabled]: disabled,
-				})}
-			>
-				{children}
-			</TagElement>
-		);
+	  const { className, children, disabled, href, variant, ...rest } = {
+		...defaults,
+		...props,
+	  };
+  
+	  const TagElement = Tag === 'a' ? Anchor : Tag;
+  
+	  // Добавляем проверку на пустой variant, чтобы не передавать его если он не нужен
+	  const variantClass = variant ? styles[variant] : '';
+	  
+	  return (
+		<TagElement
+		  {...rest}
+		  type={Tag === 'button' ? type : undefined}
+		  href={Tag === 'a' ? href : undefined}
+		  disabled={disabled}
+		  className={clsx(styles.button, variantClass, className, {
+			[styles.disabled]: disabled,
+		  })}
+		>
+		  {children}
+		</TagElement>
+	  );
 	};
-};
-
+  };
+  
 
 
 export const Action = withAction({});
@@ -54,10 +117,10 @@ export const Button = withAction({
 });
 
 export const Link = withAction({
-    type: "button",
+	type: "button",
 	Tag: 'a',
-	variant: 'link',
-});
+	variant: 'link'
+  });
 
 export const Submit = withAction({
 	Tag: 'button',
