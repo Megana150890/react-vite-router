@@ -1,0 +1,25 @@
+@use '@styles/variables' as *;
+
+.copyright {
+	width: 158px;
+	height: 16px;
+	font-family: $fontFamily;
+	font-style: normal;
+	font-weight: 500;
+	font-size: $fontSizeMain;
+	line-height: 16px;
+	color: #7b878f;
+}
+
+.footer {
+	background: #374146;
+	color: #c7d0da;
+	padding: 3rem 0;
+}
+
+.container {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: 3rem;
+}
