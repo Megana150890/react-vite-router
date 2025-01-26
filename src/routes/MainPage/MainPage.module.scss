@@ -1,0 +1,17 @@
+@use '@styles/variables' as *;
+
+.container {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0 1rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+.main {
+  display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #7dcdd7;
+	padding: 16px 80px;
+}

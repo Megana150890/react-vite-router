@@ -1,0 +1,28 @@
+@use '@styles/variables' as *;
+
+.copyright {
+	font-family: $fontFamily;
+	font-style: normal;
+	font-weight: 500;
+	font-size: $fontSizeMain;
+	line-height: 16px;
+	color: #7b878f;
+}
+
+.footer {
+	background: #374146;
+	color: #c7d0da;
+	padding: 16px 80px;
+	margin-top: auto;
+}
+
+.container {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0 1rem;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+}

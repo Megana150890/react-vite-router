@@ -1,0 +1,16 @@
+@use '@styles/variables' as *;
+
+.container {
+	width: 100%;
+	padding: 5px 11px 5px 15px;
+	box-sizing: border-box;
+	color: #58646a;
+	border: 1px solid transparent;
+	border-radius: 6px;
+	background-color: #f1f5f9;
+	font-family: $fontFamily;
+	font-style: normal;
+	font-weight:500;
+	font-size: 1rem;
+	line-height: 20px;
+}
