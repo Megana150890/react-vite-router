@@ -13,7 +13,7 @@ type MainPageProps = {
 
 export function MainPage({ data }: MainPageProps) {
 	return (
-		<main >
+		<main  >
 			<Section>
 				<Title>Message: {data.result}</Title>
 				<Trigger modalContent={<LoginForm />}>

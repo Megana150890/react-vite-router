@@ -13,7 +13,7 @@ export function Footer({className}: FooterProps) {
         <footer className={clsx(styles.footer, className)}>
             <div className={styles.container}>
                 <Logo/>
-                <Anchor href = "/" >home</Anchor>
+                {/* <Anchor href = "/" >home</Anchor> */}
                 <span className ={styles.copyright}>© 2017–2025 ProCharity</span>
             </div>
         </footer>

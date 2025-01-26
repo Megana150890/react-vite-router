@@ -1,8 +1,6 @@
 @use '@styles/variables' as *;
 
 .copyright {
-	width: 158px;
-	height: 16px;
 	font-family: $fontFamily;
 	font-style: normal;
 	font-weight: 500;
@@ -14,13 +12,17 @@
 .footer {
 	background: #374146;
 	color: #c7d0da;
-	padding: 3rem 0;
+	padding: 16px 80px;
 	margin-top: auto;
 }
 
 .container {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0 1rem;
 	display: flex;
-	justify-content: flex-start;
-	align-items: flex-start;
-	gap: 3rem;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
 }

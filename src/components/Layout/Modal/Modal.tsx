@@ -3,6 +3,7 @@ import { useState } from 'react';
 import clsx from 'clsx';
 import styles from './Modal.module.scss';
 import { createPortal } from 'react-dom';
+import { Card } from '../Card/Card';
 
 export type ModalProps = {
 	className?: string;
@@ -12,21 +13,22 @@ export type ModalProps = {
 
 export function Modal({ className, children, onClose }: ModalProps) {
 	const handleOverlayClick = (e: React.MouseEvent) => {
-		if (e.target === e.currentTarget) onClose?.(); // Закрытие при клике на оверлей
+		if (e.target === e.currentTarget) onClose?.(); 
 	};
 
 	return createPortal(
 		<div
 			className={clsx(styles.overlay, className)}
 			onClick={handleOverlayClick}
-			data-testid="Modal"
 		>
-			<div className={styles.container}>
-				<button className={styles.close} onClick={onClose} aria-label="Close">
+			
+				<Card className={styles.content}
+				>
+					<button className={styles.close} onClick={onClose} aria-label="Close">
 					×
 				</button>
-				<div className={styles.content}>{children}</div>
-			</div>
+				{children}
+			</Card>
 		</div>,
 		document.body
 	);
