@@ -1,0 +1,16 @@
+.container {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 1rem;
+	display: flex;
+	justify-content: space-between;
+
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #7dcdd7;
+	padding: 1rem 0;
+}
